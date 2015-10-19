@@ -1,0 +1,33 @@
+== README
+
+Ticket Qun是一个生成、发送、验证给第三方的身份ID。
+
+Things you may want to cover:
+
+* Ruby version
+
+1 用RVM安装 ruby 2.2.1-p85
+2 可以直接bundle install
+3 建一个gemset用ticketqun来命名，在这个gemset环境里运行bundle的话，可以相应设置.ruby-version和.ruby-gemset文件。
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
+
+
