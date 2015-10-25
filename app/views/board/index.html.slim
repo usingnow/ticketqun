@@ -1,0 +1,21 @@
+= render 'shared/board_top'
+
+.row
+  .large-12.columns
+    .orbit-container
+      ul[data-orbit]
+        li
+          =image_tag 'satelite-orbit', alt: 'Slide 1'
+          / .orbit-caption 卫星
+        li
+          =image_tag 'launch-orbit', alt: 'Slide 2'
+          / .orbit-caption 发射
+        li
+          =image_tag 'andromeda-orbit', alt: 'Slide 3'
+          / .orbit-caption 星系
+
+.row
+  .large-3.columns
+    p this is 3.
+  .large-9.columns
+    p this is 9.

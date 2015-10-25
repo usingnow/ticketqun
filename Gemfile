@@ -23,6 +23,11 @@ gem 'font-awesome-rails'
 # Use Simple Form
 gem 'simple_form'
 
+# Authentication & Authoirization
+gem 'devise'
+# gem 'cancancan'
+# gem 'omniAuth'
+
 # Try Foundation Zurb.
 gem 'foundation-rails'
 gem 'foundation-icons-sass-rails'

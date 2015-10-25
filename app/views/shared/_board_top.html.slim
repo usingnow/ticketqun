@@ -1,0 +1,45 @@
+.row
+  .large-12.columns
+    nav[data-topbar role="navigation" class="top-bar"]
+      ul.title-area
+        li.name
+          h1
+            a href="#" Ticket 群
+        li.toggle-topbar.menu-icon
+          a href="#"
+            span 菜单
+
+      section.top-bar-section
+        <!-- Right Nav Section -->
+        ul.right
+          - if user_signed_in?
+            li.divider
+            li.has-dropdown
+              a href="#" 某某某
+              ul.dropdown
+                li
+                  a href="#" 用户中心
+                li
+                  = link_to destroy_user_session_path, :method => :delete do
+                    = fa_icon "sign-out"
+                    '   
+                    | 登出
+
+          - else
+            li.divider
+            li
+              = link_to new_user_registration_path do
+                = fa_icon "user-plus"
+                ' 
+                | 注册
+            li.divider
+            li
+              = link_to new_user_session_path do
+                = fa_icon "sign-in"
+                ' 
+                | 登入
+
+        <!-- Left Nav Section -->
+        ul.left
+          li
+            a href="#" Left Nav Button
