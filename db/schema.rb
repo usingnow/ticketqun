@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151025030923) do
+ActiveRecord::Schema.define(version: 20151102140843) do
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "profile_id", limit: 4
+    t.string   "name",       limit: 255
+    t.string   "gender",     limit: 255
+    t.string   "id_number",  limit: 255
+    t.string   "id_type",    limit: 255
+    t.string   "occupation", limit: 255
+    t.string   "employer",   limit: 255
+    t.string   "position",   limit: 255
+    t.string   "country",    limit: 255
+    t.string   "province",   limit: 255
+    t.string   "city",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
