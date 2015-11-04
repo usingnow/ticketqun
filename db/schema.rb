@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102140843) do
+ActiveRecord::Schema.define(version: 20151103090853) do
 
   create_table "profiles", force: :cascade do |t|
-    t.integer  "profile_id", limit: 4
+    t.string   "profile_id", limit: 255
     t.string   "name",       limit: 255
     t.string   "gender",     limit: 255
     t.string   "id_number",  limit: 255
