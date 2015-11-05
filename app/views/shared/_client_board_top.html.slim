@@ -4,7 +4,7 @@
       ul.title-area
         li.name
           h1
-            a href="#" Ticket 群［用户端］
+            a href="#" Ticket 群[企业端]
         li.toggle-topbar.menu-icon
           a href="#"
             span 菜单
@@ -12,15 +12,15 @@
       section.top-bar-section
         <!-- Right Nav Section -->
         ul.right
-          - if user_signed_in?
+          - if client_signed_in?
             li.divider
             li.has-dropdown
-              a href="#" 某用户
+              a href="#" 某企业
               ul.dropdown
                 li
-                  a href="#" 用户中心
+                  a href="#" 客户中心
                 li
-                  = link_to destroy_user_session_path, :method => :delete do
+                  = link_to destroy_client_session_path, :method => :delete do
                     = fa_icon "sign-out"
                     '   
                     | 登出
@@ -28,13 +28,13 @@
           - else
             li.divider
             li
-              = link_to new_user_registration_path do
-                = fa_icon "user-plus"
+              = link_to new_client_registration_path do
+                = fa_icon "client-plus"
                 ' 
                 | 注册
             li.divider
             li
-              = link_to new_user_session_path do
+              = link_to new_client_session_path do
                 = fa_icon "sign-in"
                 ' 
                 | 登入
