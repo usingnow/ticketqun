@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  get 'users/index'
-
+  
+  devise_for :clients
   devise_for :users
   get 'board/help'
+  get 'users/index'
+  
+# For test   / Aaron
+  get 'profiles/index'
+  get 'client_board/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
