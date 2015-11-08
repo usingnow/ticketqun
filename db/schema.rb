@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105160334) do
+ActiveRecord::Schema.define(version: 20151108050438) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -32,20 +32,29 @@ ActiveRecord::Schema.define(version: 20151105160334) do
   add_index "clients", ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true, using: :btree
 
   create_table "profiles", force: :cascade do |t|
-    t.string   "profile_id", limit: 255
-    t.string   "name",       limit: 255
-    t.string   "gender",     limit: 255
-    t.string   "id_number",  limit: 255
-    t.string   "id_type",    limit: 255
-    t.string   "occupation", limit: 255
-    t.string   "employer",   limit: 255
-    t.string   "position",   limit: 255
-    t.string   "country",    limit: 255
-    t.string   "province",   limit: 255
-    t.string   "city",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "profile_id",              limit: 255
+    t.string   "first_name",              limit: 255
+    t.string   "last_name",               limit: 255
+    t.boolean  "gender"
+    t.boolean  "mariage"
+    t.date     "birthday"
+    t.string   "chinese_id_number",       limit: 255
+    t.string   "chinese_passport_number", limit: 255
+    t.string   "occupation",              limit: 255
+    t.string   "position",                limit: 255
+    t.string   "employer",                limit: 255
+    t.string   "country",                 limit: 255
+    t.string   "province",                limit: 255
+    t.string   "city",                    limit: 255
+    t.string   "address",                 limit: 255
+    t.string   "zipcode",                 limit: 255
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "user_id",                 limit: 4
+    t.string   "email",                   limit: 255
   end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false

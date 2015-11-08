@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   devise_for :users
   get 'board/help'
   get 'users/index'
+
+  get 'profiles/index'
   
 # For test   / Aaron
-  get 'profiles/index'
   get 'client_board/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

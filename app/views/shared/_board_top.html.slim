@@ -15,7 +15,7 @@
           - if user_signed_in?
             li.divider
             li.has-dropdown
-              a href="#" 某用户
+              = link_to current_user.profile.email, users_index_path
               ul.dropdown
                 li
                   a href="#" 用户中心

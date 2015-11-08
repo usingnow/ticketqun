@@ -6,150 +6,53 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+# class ReviseProfile < ActiveRecord::Migration
+#   def change
+#     drop_table :profiles
+
+#     create_table :profiles do |t|
+#       t.string :profile_id
+#       t.string :first_name
+#       t.string :last_name
+#       t.boolean :gender
+#       t.boolean :mariage
+#       t.date :birthday
+#       t.string :chinese_id_number
+#       t.string :chinese_passport_number
+
+#       t.string :occupation
+#       t.string :position
+#       t.string :employer
+
+#       t.string :country
+#       t.string :province
+#       t.string :city
+#       t.string :address
+#       t.string :zipcode
+
+#       t.timestamps null: false
+#     end
+#   end
+# end
+
 Profile.delete_all
 Profile.create!(
-	profile_id: '10000',
-  name: 'Aaron',
-  gender: 'Male',
-  id_number: '123456789X',
-  id_type: 'ID Card',
-  occupation: 'Teacher',
-  employer: 'School A',
-  position: 'Chinese teacher',
-  country: 'China',
-  province: 'Shanghai',
-  city: 'Shanghai',)
-
-Profile.create!(
-	profile_id: '10001',
-  name: 'Betty',
-  gender: 'Female',
-  id_number: '123456789X',
-  id_type: 'ID Card',
-  occupation: 'Teacher',
-  employer: 'School A',
-  position: 'Chinese teacher',
-  country: 'China',
-  province: 'Shanghai',
-  city: 'Shanghai',)
-
-Profile.create!(
-	profile_id: '10002',
-  name: 'Cindy',
-  gender: 'Male',
-  id_number: '123456789X',
-  id_type: 'ID Card',
-  occupation: 'Teacher',
-  employer: 'School B',
-  position: 'Chinese teacher',
-  country: 'China',
-  province: 'Shanghai',
-  city: 'Shanghai',)
-
-Profile.create!(
-	profile_id: '10003',
-  name: 'Daemon',
-  gender: 'Male',
-  id_number: '123456789X',
-  id_type: 'ID Card',
-  occupation: 'Teacher',
-  employer: 'School A',
-  position: 'Chinese teacher',
-  country: 'China',
-  province: 'Shanghai',
-  city: 'Shanghai',)
-
-Profile.create!(
-	profile_id: '10004',
-  name: 'Edward',
-  gender: 'Male',
-  id_number: '123456789X',
-  id_type: 'ID Card',
-  occupation: 'Teacher',
-  employer: 'School B',
-  position: 'Chinese teacher',
-  country: 'China',
-  province: 'Shanghai',
-  city: 'Shanghai',)
-
-Profile.create!(
-	profile_id: '10005',
-  name: 'Fentick',
-  gender: 'Female',
-  id_number: '123456789X',
-  id_type: 'ID Card',
-  occupation: 'Teacher',
-  employer: 'School C',
-  position: 'Chinese teacher',
-  country: 'China',
-  province: 'Shanghai',
-  city: 'Shanghai',)
-
-Profile.create!(
-	profile_id: '10006',
-  name: 'Grace',
-  gender: 'Female',
-  id_number: '6372846g',
-  id_type: 'Driver Card',
-  occupation: 'Teacher',
-  employer: 'School B',
-  position: 'Chinese teacher',
-  country: 'China',
-  province: 'Shanghai',
-  city: 'Shanghai',)
-
-Profile.create!(
-	profile_id: '10007',
-  name: 'Hower',
-  gender: 'Male',
-  id_number: '123456789X',
-  id_type: 'ID Card',
-  occupation: 'Teacher',
-  employer: 'School C',
-  position: 'Chinese teacher',
-  country: 'China',
-  province: 'Shanghai',
-  city: 'Shanghai',)
-
-Profile.create!(
-	profile_id: '10008',
-  name: 'Ivy',
-  gender: 'Female',
-  id_number: '123456789X',
-  id_type: 'ID Card',
-  occupation: 'Teacher',
-  employer: 'School D',
-  position: 'Chinese teacher',
-  country: 'China',
-  province: 'Shanghai',
-  city: 'Shanghai',)
-
-Profile.create!(
-	profile_id: '10009',
-  name: 'Jimmy',
-  gender: 'Male',
-  id_number: '7654321d',
-  id_type: 'Driver Card',
-  occupation: 'Teacher',
-  employer: 'School A',
-  position: 'Chinese teacher',
-  country: 'China',
-  province: 'Shanghai',
-  city: 'Shanghai',)
-
-Profile.create!(
-	profile_id: '10010',
-  name: 'Kate',
-  gender: 'Female',
-  id_number: '123456789X',
-  id_type: 'ID Card',
-  occupation: 'Teacher',
-  employer: 'School B',
-  position: 'Chinese teacher',
-  country: 'China',
-  province: 'Shanghai',
-  city: 'Shanghai',)
-
-
+	profile_id:                 '10000',
+  first_name:                 'Jimmy',
+  last_name:                  'Xu',
+  gender:                     true,
+  mariage:                    true,
+  birthday:                   '1980-03-25',
+  chinese_id_number:          '3010102198003252439',
+  chinese_passport_number:    'G12345678',
+  occupation:                 '信息科技',
+  position:                   '项目执行总监',
+  employer:                   '国际商业机器',
+  country:                    '中国',
+  province:                   '上海',
+  city:                       '市辖区',
+  address:                    '陆家嘴环路1388号16楼',
+  zipcode:                    '200001',)
 
 
