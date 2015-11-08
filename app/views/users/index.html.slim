@@ -1,0 +1,7 @@
+h1 Users#index
+p Find me in app/views/users/index.html.slim
+
+- @users.each do |user|
+  p = user.id
+  p = user.email
+  p = user.current_sign_in_at
