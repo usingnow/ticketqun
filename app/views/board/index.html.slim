@@ -1,21 +1,41 @@
-= render 'shared/board_top'
+- if user_signed_in?
 
-.row
-  .large-12.columns
-    .orbit-container
-      ul[data-orbit]
-        li
-          =image_tag 'satelite-orbit', alt: 'Slide 1'
-          / .orbit-caption 卫星
-        li
-          =image_tag 'launch-orbit', alt: 'Slide 2'
-          / .orbit-caption 发射
-        li
-          =image_tag 'andromeda-orbit', alt: 'Slide 3'
-          / .orbit-caption 星系
+  = render 'shared/board_top'
 
-.row
-  .large-3.columns
-    p this is 3.
-  .large-9.columns
-    p this is 9.
+  .row
+    .large-12.columns
+      .orbit-container
+        ul[data-orbit]
+          li
+            =image_tag 'satelite-orbit', alt: 'Slide 1'
+            / .orbit-caption 卫星
+          li
+            =image_tag 'launch-orbit', alt: 'Slide 2'
+            / .orbit-caption 发射
+          li
+            =image_tag 'andromeda-orbit', alt: 'Slide 3'
+            / .orbit-caption 星系
+
+  .row
+    .large-3.columns
+      p this is 3.
+    .large-9.columns
+      p this is 9.
+
+- elsif client_signed_in?
+  
+  p what is client does
+
+  = link_to 'log out Client', destroy_user_session_path, :method => :delete
+
+- else
+
+  p this is default index page.
+
+  = link_to 'log as User', new_user_session_path
+
+  br
+
+  = link_to 'log as Client', new_client_session_path
+
+  = link_to 'create a Client', new_client_registration_path
