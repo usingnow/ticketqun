@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :employees
   devise_for :clients
   devise_for :users
 
   # All the views directly from Board Controller.
   get 'board/help'
   get 'board/client_login'
+  get 'board/employee_login'
 
   # User Controller
   get 'users/user_center'

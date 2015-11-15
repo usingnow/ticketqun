@@ -1,0 +1,35 @@
+.header
+  .row
+    .large-12.columns
+      nav[data-topbar role="navigation" class="top-bar"]
+        ul.title-area
+          li.name
+            h1
+              a href="#" TicketQun 后台管理系统
+          li.toggle-topbar.menu-icon
+            a href="#"
+              span 菜单
+
+.row
+  .large12.columns
+    h3 请用您的公司邮箱登入系统
+
+    - if notice
+      .alert.alert-success
+        = notice
+        a.close type="button" data-dismiss="alert" &times;
+    - elsif alert
+      .alert.alert-danger
+        = alert
+        a.close type="button" data-dismiss="alert" &times;
+
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form-inputs
+        = f.input :email, required: true, autofocus: true
+        = f.input :password, required: true
+        = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+
+      .form-actions
+        = f.button :submit, "Log in"
+
+    = render "employees/shared/links"
