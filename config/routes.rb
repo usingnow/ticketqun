@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
-  
   devise_for :clients
   devise_for :users
+
+  # User Controller
+  get 'users/user_center'
+
   get 'board/help'
   get 'users/index'
 
   get 'profiles/index'
   
-# For test   / Aaron
+  # For test   / Aaron
   get 'client_board/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
