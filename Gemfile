@@ -28,10 +28,7 @@ gem 'devise'
 # gem 'cancancan'
 # gem 'omniAuth'
 
-# Try Foundation Zurb.
-gem 'foundation-rails'
-gem 'foundation-icons-sass-rails'
-gem 'foundation-datetimepicker-rails'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
