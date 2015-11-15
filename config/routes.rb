@@ -6,13 +6,15 @@ Rails.application.routes.draw do
   # All the views directly from Board Controller.
   get 'board/help'
   get 'board/client_login'
-  get 'board/employee_login'
+  get 'employee_login' => 'board#employee_login'
 
   # User Controller
   get 'users/user_center'
   get 'users/index'
 
-
+  namespace :admin do
+    resources :profiles
+  end
 
   get 'profiles/index'
 

@@ -1,35 +1,28 @@
-.header
+= render "shared/admin/navbar"
+
+.container-fluid
   .row
-    .large-12.columns
-      nav[data-topbar role="navigation" class="top-bar"]
-        ul.title-area
-          li.name
-            h1
-              a href="#" TicketQun 后台管理系统
-          li.toggle-topbar.menu-icon
-            a href="#"
-              span 菜单
+    .col-lg-8
+      .panel.panel-default
+        .panel-heading 
+          = fa_icon "exclamation-triangle"
+          ' 
+          '请用您的公司邮箱登入系统
+        .panel-body
+          = render "shared/error_messages"
+          = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .form-inputs
+              = f.input :email, required: true, autofocus: true
+              = f.input :password, required: true
+              = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
 
-.row
-  .large12.columns
-    h3 请用您的公司邮箱登入系统
+            .form-actions
+              = f.button :submit, "Log in", class: "btn btn-primary"
+              ' 
+              = link_to "Forgot your password?", new_password_path(resource_name), class: "btn btn-warning"
+              ' 
+              = link_to "Sign up", new_registration_path(resource_name)
 
-    - if notice
-      .alert.alert-success
-        = notice
-        a.close type="button" data-dismiss="alert" &times;
-    - elsif alert
-      .alert.alert-danger
-        = alert
-        a.close type="button" data-dismiss="alert" &times;
-
-    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .form-inputs
-        = f.input :email, required: true, autofocus: true
-        = f.input :password, required: true
-        = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-
-      .form-actions
-        = f.button :submit, "Log in"
-
-    = render "employees/shared/links"
+    .col-lg-4
+      .well
+        p 留待系统信息
