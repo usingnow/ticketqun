@@ -1,4 +1,4 @@
-source 'https://ruby.taobao.org'
+source 'https://rubygems.org/'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -19,6 +19,7 @@ gem 'slim-rails'
 # Use Bootstrap
 gem 'less-rails'
 # gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git', branch: 'bootstrap3'
+gem 'twitter-bootstrap-rails', '~> 3.2.0'
 gem 'font-awesome-rails'
 # Use Simple Form
 gem 'simple_form'
@@ -27,8 +28,6 @@ gem 'simple_form'
 gem 'devise'
 # gem 'cancancan'
 # gem 'omniAuth'
-
-
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
