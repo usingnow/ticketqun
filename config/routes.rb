@@ -2,11 +2,15 @@ Rails.application.routes.draw do
   devise_for :clients
   devise_for :users
 
+  # All the views directly from Board Controller.
+  get 'board/help'
+  get 'board/client_login'
+
   # User Controller
   get 'users/user_center'
-
-  get 'board/help'
   get 'users/index'
+
+
 
   get 'profiles/index'
 

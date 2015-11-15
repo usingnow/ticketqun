@@ -8,4 +8,7 @@ class BoardController < ApplicationController
   def help
 
   end
+
+  def client_login
+  end
 end
