@@ -13,7 +13,18 @@ Rails.application.routes.draw do
   get 'users/index'
 
   namespace :admin do
-    resources :profiles
+    resources :profiles do
+      collection do
+        get :select_csv_of
+        post :migrate_csv_to
+      end
+    end
+
+    resources :employees do
+      member do
+        get :workdeck_of
+      end
+    end
   end
 
   get 'profiles/index'

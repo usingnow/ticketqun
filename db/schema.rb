@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20151122070651) do
     t.datetime "updated_at",                          null: false
     t.integer  "user_id",                 limit: 4
     t.string   "email",                   limit: 255
+    t.string   "cellphone",               limit: 255
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
