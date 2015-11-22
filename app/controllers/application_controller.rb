@@ -4,8 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 
-  def after_sign_in_path_for(employee)
-    admin_profiles_path
+  # This is the URL redirect to dashboard via diferent login users' type.
+
+  def after_sign_in_path_for(resource)
+    if resource.class.to_s == "Employee"
+      workdeck_of_admin_employee_path(resource.id)
+    else
+      root_path
+    end
   end
 
 

@@ -5,6 +5,15 @@ class Admin::ProfilesController < ApplicationController
     @profiles = Profile.all
   end
 
+  def select_csv_of
+
+  end
+
+  def migrate_csv_to
+    Profile.import(params[:file])
+    redirect_to admin_profiles_url, notice: "Profile imported successful."
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
@@ -16,6 +25,6 @@ class Admin::ProfilesController < ApplicationController
       params.require(:profile).permit(:profile_id, :first_name, :last_name, :gender, :mariage, :birthday, :email,
                                       :chinese_id_number, :chinese_passport_number,
                                       :occupation, :position, :employer,
-                                      :country, :province, :city, :address, :zipcode)
+                                      :country, :province, :city, :address, :zipcode, :cellphone)
     end
 end

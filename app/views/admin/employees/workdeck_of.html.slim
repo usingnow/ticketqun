@@ -1,0 +1,18 @@
+= render "shared/admin/navbar"
+
+.container-fluid
+  .row
+    .col-lg-3
+      .panel.panel-default
+        .panel-body
+          p This is workdeck
+          p = @employee.email
+      .list-group
+          = link_to "导入CSV文件", select_csv_of_admin_profiles_path, class: "list-group-item"
+          a.list-group-item href="#" 其他功能
+          a.list-group-item href="#" 其他功能
+          a.list-group-item href="#" 其他功能
+          a.list-group-item href="#" 其他功能
+
+    .col-lg-9
+      .well

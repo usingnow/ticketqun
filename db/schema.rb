@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151115051017) do
+ActiveRecord::Schema.define(version: 20151122052511) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20151115051017) do
     t.datetime "updated_at",                          null: false
     t.integer  "user_id",                 limit: 4
     t.string   "email",                   limit: 255
+    t.string   "cellphone",               limit: 255
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree

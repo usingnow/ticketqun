@@ -1,0 +1,5 @@
+p this is where to select csv file.
+
+= form_tag migrate_csv_to_admin_profiles_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag "Import CSV"
