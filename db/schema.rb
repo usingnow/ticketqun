@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118132925) do
+ActiveRecord::Schema.define(version: 20151122070651) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20151118132925) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "clientname",             limit: 255
   end
 
   add_index "clients", ["email"], name: "index_clients_on_email", unique: true, using: :btree
@@ -44,14 +45,14 @@ ActiveRecord::Schema.define(version: 20151118132925) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
-    t.string   "employee_id",            limit: 255
+    t.string   "employee_snum",          limit: 255
   end
 
   add_index "employees", ["email"], name: "index_employees_on_email", unique: true, using: :btree
   add_index "employees", ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true, using: :btree
 
   create_table "profiles", force: :cascade do |t|
-    t.string   "profile_id",              limit: 255
+    t.string   "profile_snum",            limit: 255
     t.string   "first_name",              limit: 255
     t.string   "last_name",               limit: 255
     t.boolean  "gender"
@@ -88,6 +89,7 @@ ActiveRecord::Schema.define(version: 20151118132925) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "username",               limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
