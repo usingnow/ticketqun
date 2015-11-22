@@ -1,4 +1,6 @@
 class Admin::ProfilesController < ApplicationController
+  layout 'admin'
+
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   def index

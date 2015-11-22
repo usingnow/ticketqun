@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    title
+      =content_for?(:title) ? yield(:title) : "Ticket 群 @Usingnow"
+
+    =stylesheet_link_tag "application"
+    =javascript_include_tag "application", 'data-turbolinks-track' => true
+    =csrf_meta_tags
+  body
+    = render "shared/admin/navbar"
+
+    .container-fluid
+      .row
+        .col-lg-3
+          .panel.panel-default
+            .panel-body
+              = render 'shared/admin/employee_profile'
+          .list-group
+              = render 'shared/admin/quick_links'
+
+        .col-lg-9
+          .panel.panel-default
+            .panel-body
+              =yield

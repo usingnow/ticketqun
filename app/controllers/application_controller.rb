@@ -16,6 +16,14 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def after_sign_out_path_for(resource)
+      if resource == :employee
+        employee_login_path
+      else
+        root_path
+      end
+    end
+
     def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:employee_id, :email, :password, :password_confirmation, :remember_me) }
       devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :employee_id, :email, :password, :remember_me) }
