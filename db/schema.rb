@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20151122052511) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "employee_id",            limit: 255
   end
 
   add_index "employees", ["email"], name: "index_employees_on_email", unique: true, using: :btree

@@ -28,6 +28,26 @@
 
   = link_to 'log out Client', destroy_user_session_path, :method => :delete
 
+- elsif employee_signed_in?
+
+  p Welcome
+
+  br Email:
+  
+  = current_employee.email
+
+  br Employee_id:
+
+  p = current_employee.employee_id
+
+  br
+
+  = link_to 'Manage Profile', admin_profiles_path
+
+  br
+
+  = link_to 'Log Out', destroy_employee_session_path, :method => :delete
+
 - else
 
   p this is default index page.
@@ -38,4 +58,6 @@
 
   = link_to 'log as Client', new_client_session_path
 
-  = link_to 'create a Client', new_client_registration_path
+  br
+
+  = link_to 'log as Employee', new_employee_session_path
