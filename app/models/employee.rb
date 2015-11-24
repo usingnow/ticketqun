@@ -1,8 +1,8 @@
 class Employee < ActiveRecord::Base
   attr_accessor :login
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  # :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable, :confirmable, 
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
   
   # 允许使用 employee_snum（员工号） 或 email 登录
