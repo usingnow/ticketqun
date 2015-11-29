@@ -4,12 +4,18 @@ class Admin::ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   def index
-    @profiles = Profile.all
+    @profiles = Profile.paginate(page: params[:page], per_page: 12)
   end
 
   def show
     @import_log = @profile.import_log
+  end
 
+  def destroy
+    @profile = Profile.find(params[:id])
+    @profile.destroy
+
+    redirect_to admin_profiles_url
   end
 
   def select_csv_of

@@ -21,6 +21,10 @@ gem 'less-rails'
 # gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git', branch: 'bootstrap3'
 gem 'twitter-bootstrap-rails', '~> 3.2.0'
 gem 'font-awesome-rails'
+
+# Used for Pagination
+gem 'will_paginate-bootstrap'
+
 # Use Simple Form
 gem 'simple_form'
 

@@ -4,41 +4,47 @@ table.table.table-striped.table-hover
   thead
     tr
       th 档案号
-      th 姓
-      th 名
-      th 性别
-      th 婚否
-      th 生日
-      th 身份证
-      th 护照
+      th 姓名
+      / th 姓
+      / th 名
+      / th 性别
+      / th 婚否
+      / th 生日
+      / th 身份证
+      / th 护照
       th 行业
       th 职位
       th 公司
-      th 国家
+      / th 国家
       th 省份
       th 城市
-      th 地址
-      th 邮编
+      / th 地址
+      / th 邮编
       th 电话
 
   tbody
     - @profiles.each do |profile|
       tr
-        td = link_to profile.profile_snum, admin_profile_path(profile)
-        td = profile.last_name
-        td = profile.first_name
-        td = profile.gender
-        td = profile.mariage
-        td = profile.birthday
-        td = profile.chinese_id_number
-        td = profile.chinese_passport_number
+        td = profile.profile_snum
+        td = easyname(profile.first_name, profile.last_name)
+        / td = profile.last_name
+        / td = profile.first_name
+        / td = profile.gender
+        / td = profile.mariage
+        / td = profile.birthday
+        / td = profile.chinese_id_number
+        / td = profile.chinese_passport_number
         td = profile.occupation
         td = profile.position
         td = profile.employer
-        td = profile.country
+        / td = profile.country
         td = profile.province
         td = profile.city
-        td = profile.address
-        td = profile.zipcode
+        / td = profile.address
+        / td = profile.zipcode
         td = profile.cellphone
-
+        td = link_to admin_profile_path(profile) do
+           = fa_icon "pencil", class: "fa-fw"
+        td = link_to admin_profile_path(profile), method: :delete, data: {confirm: 'Are you sure?'} do
+           = fa_icon "trash", class: "fa-fw"
+= will_paginate
