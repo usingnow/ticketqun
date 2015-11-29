@@ -5,5 +5,5 @@ class ChangeEmployeeidFromEmployees < ActiveRecord::Migration
 
   def down
   	rename_column :employees, :employee_snum, :employee_id
-  en
+  end
 end

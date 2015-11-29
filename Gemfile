@@ -29,9 +29,6 @@ gem 'devise'
 # gem 'cancancan'
 # gem 'omniAuth'
 
-# using 'mailcatcher' for test, after bundle install, run 'mailcatcher' and you can login 'http://localhost:1080' to check Email
-gem 'mailcatcher'
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -53,6 +50,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # using 'mailcatcher' for test, after bundle install, run 'mailcatcher' and you can login 'http://localhost:1080' to check Email
+  gem 'mailcatcher'
 end
 
 group :development do
