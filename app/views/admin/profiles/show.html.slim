@@ -1,0 +1,22 @@
+ul.nav.nav-tabs role="tablist"
+  li.active role="presentation"
+    a href="#home" aria-controls="home" role="tab" data-toggle="tab" 基本信息
+  li role="presentation"
+    a href="#contact" aria-controls="contact" role="tab" data-toggle="tab" 联系方式
+  li role="presentation"
+    a href="#employment" aria-controls="employment" role="tab" data-toggle="tab" 工作情况
+  li role="presentation"
+    a href="#import_log" aria-controls="import_log" role="tab" data-toggle="tab" 导入记录
+
+.tab-content
+  .tab-pane.active role="tabpanel" id="home"
+    = @profile.profile_id
+
+  .tab-pane role="tabpanel" id="contact"
+    = @profile.cellphone
+
+  .tab-pane role="tabpanel" id="employment"
+    = @profile.employer
+
+  .tab-pane role="tabpanel" id="import_log"
+    = @profile.import_log

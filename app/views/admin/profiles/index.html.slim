@@ -22,7 +22,7 @@ table.table.table-striped.table-hover
   tbody
     - @profiles.each do |profile|
       tr
-        td = profile.profile_id
+        td = link_to profile.profile_id, admin_profile_path(profile)
         td = profile.last_name
         td = profile.first_name
         td = profile.gender

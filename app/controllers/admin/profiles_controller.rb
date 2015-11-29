@@ -7,6 +7,10 @@ class Admin::ProfilesController < ApplicationController
     @profiles = Profile.all
   end
 
+  def show
+
+  end
+
   def select_csv_of
 
   end

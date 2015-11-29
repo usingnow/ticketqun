@@ -14,13 +14,14 @@ class Profile < ActiveRecord::Base
 
     def self.import(file)
       CSV.foreach(file.path, headers: true) do |row|
-        puts row.to_hash
+        # puts row.to_hash
+        # puts file.to_s
 
         profile = find_by_cellphone(row["cellphone"]) || new
         if profile.new_record?
           Profile.create! row.to_hash
         else
-          profile.import_log = { DateTime.current.to_s => row.to_hash.to_s }
+          profile.import_log[DateTime.current.to_s(:db)] = row.to_hash.to_s
           profile.save
         end
       end
