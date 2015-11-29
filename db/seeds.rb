@@ -12,7 +12,7 @@ l_names = ['刘','曹','孙','关','张','赵','马','黄','诸葛','魏']
 f_names = ['备','操','权','羽','飞','云','超','忠','亮','延']
 
 (0..9).each do |n|
-  Profile.create!(profile_id:                 '10000',
+  Profile.create!(profile_snum:               '10000' + n.to_s,
                   first_name:                 f_names[n],
                   last_name:                  l_names[n],
                   gender:                     true,
@@ -29,5 +29,6 @@ f_names = ['备','操','权','羽','飞','云','超','忠','亮','延']
                   address:                    '陆家嘴环路1388号16楼' + n.to_s + '座',
                   zipcode:                    '20000' + n.to_s,
                   email:                      'mail.address.' + n.to_s + '@mail.com',
-                  user_id:                    (n+1).to_s,)
+                  user_id:                    ( n + 1 ).to_s,
+                  cellphone:                  '1398888888' + n.to_s)
 end

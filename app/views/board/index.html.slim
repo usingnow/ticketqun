@@ -26,6 +26,16 @@
   
   p what is client does
 
+  br Email:
+  
+  = current_client.email
+
+  br ClientName:
+
+  p = current_client.clientname
+
+  br
+
   = link_to 'log out Client', destroy_user_session_path, :method => :delete
 
 - elsif employee_signed_in?
@@ -36,9 +46,9 @@
   
   = current_employee.email
 
-  br Employee_id:
+  br Employee_snum:
 
-  p = current_employee.employee_id
+  p = current_employee.employee_snum
 
   br
 

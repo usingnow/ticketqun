@@ -7,14 +7,14 @@
         .panel-heading 
           = fa_icon "exclamation-triangle"
           ' 
-          '请用您的公司邮箱登入系统
+          '请用您的员工号或公司邮箱登入系统
         .panel-body
           = render "shared/error_messages"
           = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
             .form-inputs
-              = f.input :login, :label => 'Employee_ID / Email', required: true, autofocus: true
-              = f.input :password, required: true
-              = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+              = f.input :login, :label => '员工号 / 邮箱', required: true, autofocus: true
+              = f.input :password, :label => '密码', required: true
+              = f.input :remember_me, :label => '记住密码', as: :boolean if devise_mapping.rememberable?
 
             .form-actions
               = f.button :submit, "Log in", class: "btn btn-primary"

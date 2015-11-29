@@ -4,10 +4,10 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-  	<%= f.input :employee_id, :label => 'Employee_ID', required: true, autofocus: true %>
-    <%= f.input :email, required: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+  	<%= f.input :employee_snum, :label => '员工号', required: true, autofocus: true %>
+    <%= f.input :email, :label => '邮箱', required: true %>
+    <%= f.input :password, :label => '密码', required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password_confirmation, :label => '确认密码', required: true %>
   </div>
 
   <div class="form-actions">
