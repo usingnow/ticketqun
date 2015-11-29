@@ -7,3 +7,25 @@
     margin-top: 20px;
   }
 }
+
+.bs-callout {
+  padding: 10px 20px 0px 20px;
+  margin: 0px 0px 5px 0px;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+  h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  p:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+.bs-callout-info {
+  border-left-color: #1b809e;
+  h4 {
+    color: #1b809e;
+  }
+}

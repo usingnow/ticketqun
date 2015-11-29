@@ -1,7 +1,38 @@
+.bs-callout.bs-callout-info
+  form.form-horizontal
+      fieldset[disabled]
+        .form-group
+          label.col-lg-2.control-label 姓名
+          .col-lg-10
+            input.form-control value= easy_name(@profile.first_name, @profile.last_name)
+
+        .form-group
+          label.col-lg-2.control-label 性别
+          .col-lg-10
+            input.form-control value= easy_gender(@profile.gender)
+
+        .form-group
+          label.col-lg-2.control-label 婚否
+          .col-lg-10
+            input.form-control value= easy_marital_status(@profile.mariage)
+
+        .form-group
+          label.col-lg-2.control-label 出生年月
+          .col-lg-10
+            input.form-control value= @profile.birthday
+        .form-group
+          label.col-lg-2.control-label 身份证号
+          .col-lg-10
+            input.form-control value= @profile.chinese_id_number
+        .form-group
+          label.col-lg-2.control-label 护照号码
+          .col-lg-10
+            input.form-control value= @profile.chinese_passport_number
+
+
+
 ul.nav.nav-tabs role="tablist"
   li.active role="presentation"
-    a href="#home" aria-controls="home" role="tab" data-toggle="tab" 基本信息
-  li role="presentation"
     a href="#contact" aria-controls="contact" role="tab" data-toggle="tab" 联系方式
   li role="presentation"
     a href="#employment" aria-controls="employment" role="tab" data-toggle="tab" 工作情况
@@ -9,79 +40,75 @@ ul.nav.nav-tabs role="tablist"
     a href="#import_log" aria-controls="import_log" role="tab" data-toggle="tab" 导入记录
 
 .tab-content
-  .tab-pane.active role="tabpanel" id="home"
+  .tab-pane.active role="tabpanel" id="contact"
     form.form-horizontal
-      label.col-lg-2.control-label 姓名
-      .col-lg-10
-        p.form-control-static = easyname(@profile.first_name, @profile.last_name)
+      fieldset[disabled]
+        .form-group
+          label.col-lg-2.control-label 邮箱
+          .col-lg-10
+            input.form-control value= @profile.email
 
-      label.col-lg-2.control-label 性别
-      .col-lg-10
-        p.form-control-static = @profile.gender ? "男" : "女"
+        .form-group
+          label.col-lg-2.control-label 手机
+          .col-lg-10
+            input.form-control value= @profile.cellphone
 
-      label.col-lg-2.control-label 婚否
-      .col-lg-10
-        p.form-control-static = @profile.mariage ? "已婚" : "单身"
+        .form-group
+          label.col-lg-2.control-label 国家
+          .col-lg-10
+            input.form-control value= @profile.country
 
-      label.col-lg-2.control-label 出生年月
-      .col-lg-10
-        p.form-control-static = @profile.birthday
+        .form-group
+          label.col-lg-2.control-label 省份
+          .col-lg-10
+            input.form-control value= @profile.province
 
-      label.col-lg-2.control-label 身份证号
-      .col-lg-10
-        p.form-control-static = @profile.chinese_id_number
+        .form-group
+          label.col-lg-2.control-label 地市
+          .col-lg-10
+            input.form-control value= @profile.city
 
-      label.col-lg-2.control-label 护照号码
-      .col-lg-10
-        p.form-control-static = @profile.chinese_passport_number
+        .form-group
+          label.col-lg-2.control-label 地址
+          .col-lg-10
+            input.form-control value= @profile.address
 
-  .tab-pane role="tabpanel" id="contact"
-    form.form-horizontal
-      label.col-lg-2.control-label 邮箱
-      .col-lg-10
-        p.form-control-static = @profile.email
-
-      label.col-lg-2.control-label 手机
-      .col-lg-10
-        p.form-control-static = @profile.cellphone
-
-      label.col-lg-2.control-label 国家
-      .col-lg-10
-        p.form-control-static = @profile.country
-
-      label.col-lg-2.control-label 省份
-      .col-lg-10
-        p.form-control-static = @profile.province
-
-      label.col-lg-2.control-label 地市
-      .col-lg-10
-        p.form-control-static = @profile.city
-
-      label.col-lg-2.control-label 地址
-      .col-lg-10
-        p.form-control-static = @profile.address
-
-      label.col-lg-2.control-label 邮编
-      .col-lg-10
-        p.form-control-static = @profile.zipcode
+        .form-group
+          label.col-lg-2.control-label 邮编
+          .col-lg-10
+            input.form-control value= @profile.zipcode
 
   .tab-pane role="tabpanel" id="employment"
     form.form-horizontal
-      label.col-lg-2.control-label 雇主
-      .col-lg-10
-        p.form-control-static = @profile.employer
+      fieldset[disabled]
+        .form-group
+          label.col-lg-2.control-label 雇主
+          .col-lg-10
+            input.form-control value= @profile.employer
 
-      label.col-lg-2.control-label 行业
-      .col-lg-10
-        p.form-control-static = @profile.occupation
+        .form-group
+          label.col-lg-2.control-label 行业
+          .col-lg-10
+            input.form-control value= @profile.occupation
 
-      label.col-lg-2.control-label 职位
-      .col-lg-10
-        p.form-control-static = @profile.position
+        .form-group
+          label.col-lg-2.control-label 职位
+          .col-lg-10
+            input.form-control value= @profile.position
 
   .tab-pane role="tabpanel" id="import_log"
     form.form-horizontal
-      - @import_log.each do |datetime, log|
-        label.col-lg-2.control-label = datetime
-        .col-lg-10
-          p.form-control-static.alert.alert-info = log
+      - if @import_log
+        - @import_log.each do |datetime, log|
+          label.col-lg-2.control-label = datetime
+          .col-lg-10
+            p.form-control-static.alert.alert-info = log
+      - else
+        p.alert.alert-info
+          = fa_icon "exclamation-circle", class: "fx-fw"
+          ' 
+          ' 没有重复导入记录。
+hr
+  a.btn.btn-primary 修改
+  ' 
+  a.btn.btn-danger 删除
