@@ -8,6 +8,7 @@ class Admin::ProfilesController < ApplicationController
   end
 
   def show
+    @import_log = @profile.import_log
 
   end
 
