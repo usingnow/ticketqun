@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :employees
   devise_for :clients
   devise_for :users
+  resources :employee_applicants
 
   # All the views directly from Board Controller.
   get 'board/help'
