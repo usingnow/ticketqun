@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(version: 20151206072813) do
   add_index "clients", ["email"], name: "index_clients_on_email", unique: true, using: :btree
   add_index "clients", ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true, using: :btree
 
+  create_table "employee_applicants", force: :cascade do |t|
+    t.string   "employee_snum", limit: 255
+    t.string   "name",          limit: 255
+    t.string   "email",         limit: 255
+    t.date     "board_on"
+    t.boolean  "acceptance"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
   create_table "employees", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
