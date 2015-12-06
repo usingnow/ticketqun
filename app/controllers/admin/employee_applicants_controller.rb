@@ -1,16 +1,8 @@
 class Admin::EmployeeApplicantsController < ApplicationController
+  layout 'admin'
+
   def index
-    @employee_applicant = EmployeeApplicant.all
-  end
-
-  def new
-  end
-
-  def create
-    @employee_applicant = EmployeeApplicant.new(employee_applicant_params)
-    @employee_applicant.save
-
-    redirect_to new_employee_session_path
+    @employee_applicants = EmployeeApplicant.all
   end
 
   private 

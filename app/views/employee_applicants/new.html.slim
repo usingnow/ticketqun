@@ -1,0 +1,27 @@
+= render "shared/admin/navbar"
+
+.container-fluid
+  .row
+    .col-lg-8
+      .panel.panel-default
+        .panel-heading 
+          = fa_icon "exclamation-triangle"
+          ' 
+          '请填写您的申请基本信息：
+        .panel-body
+          = render "shared/error_messages"
+          = simple_form_for :employee_applicant, url:employee_applicants_path do |f|
+            .form-inputs
+              = f.input :employee_snum, :label => '员工号', required: true, autofocus: true
+              = f.input :email, :label => '邮箱', required: true
+              = f.input :name, :label => '姓名', required: true
+              = f.input :board_on, :label => '入职日期', required: true
+
+            .form-actions
+              = f.button :submit, "Submit", class: "btn btn-primary"
+              ' 
+              = link_to "Back", new_employee_session_path, class: "btn btn-warning"
+
+    .col-lg-4
+      .well
+        p 留待系统信息
