@@ -30,6 +30,5 @@ f_names = ['备','操','权','羽','飞','云','超','忠','亮','延']
                   zipcode:                    (20000 + n).to_s,
                   email:                      'mail.address.' + n.to_s + '@mail.com',
                   user_id:                    ( n + 1 ).to_s,
-                  cellphone:                  (13988888000 + n).to_s,
-                  import_log:                 'import by default')
+                  cellphone:                  (13988888000 + n).to_s)
 end

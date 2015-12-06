@@ -47,4 +47,4 @@ table.table.table-striped.table-hover
            = fa_icon "pencil", class: "fa-fw"
         td = link_to admin_profile_path(profile), method: :delete, data: {confirm: 'Are you sure?'} do
            = fa_icon "trash", class: "fa-fw"
-= will_paginate
+= will_paginate @profiles, renderer: BootstrapPagination::Rails
