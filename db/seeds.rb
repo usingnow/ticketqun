@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Profile.delete_all
+EmployeeApplicant.delete_all
 
 l_names = ['刘','曹','孙','关','张','赵','马','黄','诸葛','魏']
 f_names = ['备','操','权','羽','飞','云','超','忠','亮','延']
@@ -31,4 +32,11 @@ f_names = ['备','操','权','羽','飞','云','超','忠','亮','延']
                   email:                      'mail.address.' + n.to_s + '@mail.com',
                   user_id:                    ( n + 1 ).to_s,
                   cellphone:                  (13988888000 + n).to_s)
+end
+
+(0..10).each do |n|
+  EmployeeApplicant.create!(employee_snum:  (20000 + n).to_s,
+                            email:          'applicant' + n.to_s + '@apply.com',
+                            name:           l_names[rand(0..9)] + f_names[rand(0..9)],
+                            board_on:       '2015-09-' + (1 + n).to_s)
 end

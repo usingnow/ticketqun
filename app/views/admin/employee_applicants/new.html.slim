@@ -10,7 +10,7 @@
           '请填写您的申请基本信息：
         .panel-body
           = render "shared/error_messages"
-          = simple_form_for :employee_applicant, url:employee_applicant_index_path do |f|
+          = simple_form_for :employee_applicant, url:admin_employee_applicants_path do |f|
             .form-inputs
               = f.input :employee_snum, :label => '员工号', required: true, autofocus: true
               = f.input :email, :label => '邮箱', required: true

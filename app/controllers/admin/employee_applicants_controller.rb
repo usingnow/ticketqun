@@ -1,4 +1,4 @@
-class EmployeeApplicantsController < ApplicationController
+class Admin::EmployeeApplicantsController < ApplicationController
   def index
     @employee_applicant = EmployeeApplicant.all
   end
