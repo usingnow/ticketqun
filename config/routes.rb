@@ -25,6 +25,16 @@ Rails.application.routes.draw do
         get :workdeck_of
       end
     end
+
+    resources :api_migrations do
+      collection do
+
+      end
+      member do
+        get :select_csv_of
+        post :migrate_csv_to
+      end
+    end
   end
 
   get 'profiles/index'

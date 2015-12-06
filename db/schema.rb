@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151129052345) do
+ActiveRecord::Schema.define(version: 20151206072813) do
+
+  create_table "api_migrations", force: :cascade do |t|
+    t.string   "api_owner",             limit: 255
+    t.datetime "delivered_at"
+    t.integer  "number_of_transaction", limit: 4
+    t.integer  "number_of_completion",  limit: 4
+    t.string   "migration_ref",         limit: 255
+    t.string   "log_file_name",         limit: 255
+    t.string   "log_file_url",          limit: 255
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
 
   create_table "clients", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -78,8 +90,10 @@ ActiveRecord::Schema.define(version: 20151129052345) do
     t.string   "email",                   limit: 255
     t.string   "cellphone",               limit: 255
     t.text     "import_log",              limit: 65535
+    t.integer  "api_migration_id",        limit: 4
   end
 
+  add_index "profiles", ["api_migration_id"], name: "index_profiles_on_api_migration_id", using: :btree
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|

@@ -1,0 +1,8 @@
+p = @api_migration.api_owner
+p = @api_migration.migration_ref
+
+
+- if @api_migration.profiles.empty?
+  = link_to "选择导入的csv文件", select_csv_of_admin_api_migration_path(@api_migration.id), class: "btn btn-primary"
+- else
+  = @api_migration.profiles.size
