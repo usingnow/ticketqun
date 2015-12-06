@@ -3,23 +3,21 @@
 table.table.table-striped.table-hover
   thead
     tr
-      th 档案号
+      th 员工号
       th 姓名
-      / th 姓
-      / th 名
-      / th 性别
+      th 邮箱 
+      th 入职日期 
 
   tbody
-    - @employee_applicant.each do |profile|
+    - @employee_applicants.each do |applicant|
       tr
-        td = profile.profile_snum
-        td = easy_name(profile.first_name, profile.last_name)
-        / td = profile.last_name
-        / td = profile.first_name
-        / td = profile.gender
+        td = applicant.employee_snum
+        td = applicant.name
+        td = applicant.email
+        td = applicant.board_on
 
-        td = link_to admin_profile_path(profile) do
-           = fa_icon "pencil", class: "fa-fw"
-        td = link_to admin_profile_path(profile), method: :delete, data: {confirm: 'Are you sure?'} do
+        / td = link_to admin_profile_path(profile) do
+        /    = fa_icon "pencil", class: "fa-fw"
+        td = link_to admin_employee_applicant_path(applicant), method: :delete, data: {confirm: 'Are you sure?'} do
            = fa_icon "trash", class: "fa-fw"
-= will_paginate @profiles, renderer: BootstrapPagination::Rails
+/ = will_paginate @profiles, renderer: BootstrapPagination::Rails
