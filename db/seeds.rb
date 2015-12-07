@@ -34,7 +34,7 @@ f_names = ['备','操','权','羽','飞','云','超','忠','亮','延']
                   cellphone:                  (13988888000 + n).to_s)
 end
 
-(0..10).each do |n|
+(0..11).each do |n|
   EmployeeApplicant.create!(employee_snum:  (20000 + n).to_s,
                             email:          'applicant' + n.to_s + '@apply.com',
                             name:           l_names[rand(0..9)] + f_names[rand(0..9)],

@@ -1,6 +1,6 @@
 class Employee < ActiveRecord::Base
   attr_accessor :login
-  has_one :employee_applicant
+
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable, 
@@ -10,7 +10,8 @@ class Employee < ActiveRecord::Base
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
-      where(conditions).where(["lower(employee_snum) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+      where(conditions).where(["lower(employee_snum) = :value OR lower(email) = :value", 
+                              { :value => login.downcase }]).first
     else
       where(conditions).first
     end

@@ -10,12 +10,12 @@
           '请填写您的申请基本信息：
         .panel-body
           = render "shared/error_messages"
-          = simple_form_for :employee_applicant, url:employee_applicants_path do |f|
+          = simple_form_for :employee_applicant, url: employee_applicants_path do |f|
             .form-inputs
-              = f.input :employee_snum, :label => '员工号', required: true, autofocus: true
-              = f.input :email, :label => '邮箱', required: true
-              = f.input :name, :label => '姓名', required: true
-              = f.input :board_on, :label => '入职日期', required: true
+              = f.input :employee_snum, label: '员工号', required: true, autofocus: true
+              = f.input :email, label: '邮箱', required: true
+              = f.input :name, label: '姓名', required: true
+              = f.input :board_on, label: '入职日期', required: true
 
             .form-actions
               = f.button :submit, "Submit", class: "btn btn-primary"
