@@ -27,7 +27,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :api_migrations do
+    resources :amations do
       collection do
 
       end
@@ -35,6 +35,10 @@ Rails.application.routes.draw do
         get :select_csv_of
         post :migrate_csv_to
       end
+    end
+
+    resources :employee_applicants do
+
     end
   end
 

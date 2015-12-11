@@ -1,8 +1,5 @@
 class EmployeeApplicantsController < ApplicationController
-  def index
-    @employee_applicant = EmployeeApplicant.all
-  end
-
+  
   def new
   end
 
@@ -10,11 +7,12 @@ class EmployeeApplicantsController < ApplicationController
     @employee_applicant = EmployeeApplicant.new(employee_applicant_params)
     @employee_applicant.save
 
-    redirect_to new_employee_session_path
+    redirect_to '/employees/sign_in'
   end
 
-  private 
+  private
     def employee_applicant_params
-      params.require(:employee_applicant).permit(:employee_snum, :name, :email, :board_on, :acceptance, :created_at)
+      params.require(:employee_applicant).permit(:employee_snum, :name, :email, 
+                                                 :board_on, :acceptance, :created_at)
     end
 end
