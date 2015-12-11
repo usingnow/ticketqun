@@ -1,45 +1,93 @@
 .row
-  .large-12.columns
-    nav[data-topbar role="navigation" class="top-bar"]
-      ul.title-area
-        li.name
-          h1
-            a href="#" Ticket 群［用户端］
-        li.toggle-topbar.menu-icon
-          a href="#"
-            span 菜单
+  nav.navbar.navbar-default.navbar-fixed-top
+    .container-fluid
+      .navbar-header
+        button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#board-nav-collapse" aria-expanded="false"
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand href="#"
+          i.fa.fa-hand-spock-o
+          ' 
+          | 数据群
 
-      section.top-bar-section
-        <!-- Right Nav Section -->
-        ul.right
-          - if user_signed_in?
-            li.divider
-            li.has-dropdown
-              = link_to current_user.profile.email, users_index_path
-              ul.dropdown
-                li
-                  a href="#" 用户中心
-                li
-                  = link_to destroy_user_session_path, :method => :delete do
-                    = fa_icon "sign-out"
-                    '   
-                    | 登出
-
-          - else
-            li.divider
-            li
-              = link_to new_user_registration_path do
-                = fa_icon "user-plus"
-                ' 
-                | 注册
-            li.divider
-            li
-              = link_to new_user_session_path do
-                = fa_icon "sign-in"
-                ' 
-                | 登入
-
-        <!-- Left Nav Section -->
-        ul.left
+      #board-nav-collapse.collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-right
           li
-            a href="#" Left Nav Button
+            a href="#"
+              = fa_icon "user-plus", class: "fa-fw"
+              ' 
+              |注册
+          li
+            a href="#"
+              = fa_icon "sign-in", class: "fa-fw"
+              ' 
+              |登陆
+          li.dropdown
+            a.dropdown-toggle href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+              |测试用链接（暂时)
+              ' 
+              span.caret
+
+            ul.dropdown-menu
+              li
+                = link_to 'log as User', new_user_session_path
+              li
+                = link_to 'log as Client', new_client_session_path
+              li
+                = link_to 'log as Employee', new_employee_session_path
+              li role="separator" class="divider"
+              li
+                a href="#" Separated link
+
+
+
+
+
+
+
+  / .large-12.columns
+  /   nav[data-topbar role="navigation" class="top-bar navbar-fixed-top"]
+  /     ul.title-area
+  /       li.name
+  /         h1
+  /           a href="#" Ticket 群［用户端］
+  /       li.toggle-topbar.menu-icon
+  /         a href="#"
+  /           span 菜单
+
+  /     section.top-bar-section
+  /       <!-- Right Nav Section -->
+  /       ul.right
+  /         - if user_signed_in?
+  /           li.divider
+  /           li.has-dropdown
+  /             = link_to current_user.profile.email, users_index_path
+  /             ul.dropdown
+  /               li
+  /                 a href="#" 用户中心
+  /               li
+  /                 = link_to destroy_user_session_path, :method => :delete do
+  /                   = fa_icon "sign-out"
+  /                   '   
+  /                   | 登出
+
+  /         - else
+  /           li.divider
+  /           li
+  /             = link_to new_user_registration_path do
+  /               = fa_icon "user-plus"
+  /               ' 
+  /               | 注册
+  /           li.divider
+  /           li
+  /             = link_to new_user_session_path do
+  /               = fa_icon "sign-in"
+  /               ' 
+  /               | 登入
+
+  /       <!-- Left Nav Section -->
+  /       ul.left
+  /         li
+  /           a href="#" Left Nav Button

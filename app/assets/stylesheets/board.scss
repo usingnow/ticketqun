@@ -1,3 +1,44 @@
 // Place all the styles related to the board controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.item-content-1 {
+  height: 768px;
+  background-repeat: none;
+  background-position: center;
+  background-image: url(hp.jpg);
+}
+
+.item-content-2 {
+  height: 768px;
+  background-repeat: none;
+  background-position: center;
+  background-image: url(bird.jpg);
+}
+
+.fa-4 {
+  margin-right: 0.07142857em;
+}
+
+.board-footer {
+  background-color: #333333;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  p {
+    color: #dddddd;
+  }
+}
+
+// #board-nav-collapse {
+//   a {
+//     color: #333333;
+//   }
+
+//   a:hover {
+//     color: #333333;
+//   }
+// }
+
+// .navbar {
+//   background: rgba(248, 248, 248, 0.5) none repeat scroll 0% 0%;
+// }

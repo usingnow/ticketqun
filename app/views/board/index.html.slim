@@ -1,73 +1,164 @@
-- if user_signed_in?
+.row
+  .col-lg-12.col-sm-12
+    #board-carousel.carousel.slide data-ride="carousel"
+      ol.carousel-indicators
+        li.active data-target="#board-carousel" data-slide-to="0"
+        li data-target="#board-carousel" data-slide-to="1"
 
-  = render 'shared/board_top'
+      .carousel-inner role="listbox"
+        .item.active
+          .item-content-1.clearfix
+        .item
+          .item-content-2.clearfix
 
-  .row
-    .large-12.columns
-      .orbit-container
-        ul[data-orbit]
-          li
-            =image_tag 'satelite-orbit', alt: 'Slide 1'
-            / .orbit-caption 卫星
-          li
-            =image_tag 'launch-orbit', alt: 'Slide 2'
-            / .orbit-caption 发射
-          li
-            =image_tag 'andromeda-orbit', alt: 'Slide 3'
-            / .orbit-caption 星系
+      a.left.carousel-control href="#board-carousel" role="button" data-slide="prev"
+        i.fa.fa-chevron-left.fa-4 aria-hidden="true" style="font-size: 3.5em; line-height: 768px;"
+        span.sr-only Previous
 
-  .row
-    .large-3.columns
-      p this is 3.
-    .large-9.columns
-      p this is 9.
+      a.right.carousel-control href="#board-carousel" role="button" data-slide="next"
+        i.fa.fa-chevron-right.fa-4 aria-hidden="true" style="font-size: 3.5em; line-height: 768px;"
+        span.sr-only Next
 
-- elsif client_signed_in?
+= render 'shared/board_top'
+
+hr
+
+.row
+  .container-fluid
+    .col-sm-12.col-md-6.col-lg-3
+      .thumbnail
+        = image_tag 'photo_01.jpg'
+
+        .caption
+          h3 注册我们的数据服务
+          p 我们推荐您关注我们的数据服务，【群】会按月定期发布数据分析报告，助力您的企业多方位了解潜在客户。
+          p
+            a href="#" class="btn btn-primary" role="button" 了解更多
+            ' 
+            a href="#" class="btn btn-default" role="button" 现在购买
+
+    .col-sm-12.col-md-6.col-lg-3
+      .thumbnail
+        = image_tag 'photo_02.jpg'
+
+        .caption
+          h3 按次购买数据服务
+          p 采购单次的数据活动，Ping您的目标客户群，标准化的反馈机制，数据一览，让您的市场营销之旅轻松从容，尽在掌握。
+          p
+            a href="#" class="btn btn-primary" role="button" 了解更多
+            ' 
+            a href="#" class="btn btn-default" role="button" 现在购买
+
+    .col-sm-12.col-md-6.col-lg-3
+      .thumbnail
+        = image_tag 'photo_03.jpg'
+
+        .caption
+          h3 想了解更多数据服务？
+          p 数据分析是指用适当统计方法对收集来的大量数据进行分析，提取有用信息和形成结论，加以详细研究和概括总结的过程。
+          p
+            a href="#" class="btn btn-primary" role="button" 了解更多
+            ' 
+            a href="#" class="btn btn-default" role="button" 现在购买
+
+    .col-sm-12.col-md-6.col-lg-3
+      .thumbnail
+        = image_tag 'photo_05.jpg'
+
+        .caption
+          h3 定制您的需要
+          p 每个企业都有与众不同的视角，对待市场与客户如此，对待数据也是如此，聆听是数据服务的起点……
+          p
+            a href="#" class="btn btn-primary" role="button" 了解更多
+            ' 
+            a href="#" class="btn btn-default" role="button" 洗耳恭听
+
+footer
+  .container-fluid
+    .row.board-footer
+      .col-sm-12.col-md-6.col-lg-4
+        p 上海采恪企业管理咨询服务有限公司 @2010 - 2016
+      .col-sm-12.col-md-6.col-lg-8
+        p this is others
+
+
+
+
+
+
+
+
+
+/ - if user_signed_in?
+
+/   = render 'shared/board_top'
+
+/   .row
+/     .large-12.columns
+/       .orbit-container
+/         ul[data-orbit]
+/           li
+/             =image_tag 'satelite-orbit', alt: 'Slide 1'
+/             / .orbit-caption 卫星
+/           li
+/             =image_tag 'launch-orbit', alt: 'Slide 2'
+/             / .orbit-caption 发射
+/           li
+/             =image_tag 'andromeda-orbit', alt: 'Slide 3'
+/             / .orbit-caption 星系
+
+/   .row
+/     .large-3.columns
+/       p this is 3.
+/     .large-9.columns
+/       p this is 9.
+
+/ - elsif client_signed_in?
   
-  p what is client does
+/   p what is client does
 
-  br Email:
+/   br Email:
   
-  = current_client.email
+/   = current_client.email
 
-  br ClientName:
+/   br ClientName:
 
-  p = current_client.clientname
+/   p = current_client.clientname
 
-  br
+/   br
 
-  = link_to 'log out Client', destroy_user_session_path, :method => :delete
+/   = link_to 'log out Client', destroy_user_session_path, :method => :delete
 
-- elsif employee_signed_in?
+/ - elsif employee_signed_in?
 
-  p Welcome
+/   p Welcome
 
-  br Email:
+/   br Email:
   
-  = current_employee.email
+/   = current_employee.email
 
-  br Employee_snum:
+/   br Employee_snum:
 
-  p = current_employee.employee_snum
+/   p = current_employee.employee_snum
 
-  br
+/   br
 
-  = link_to 'Manage Profile', admin_profiles_path
+/   = link_to 'Manage Profile', admin_profiles_path
 
-  br
+/   br
 
-  = link_to 'Log Out', destroy_employee_session_path, :method => :delete
+/   = link_to 'Log Out', destroy_employee_session_path, :method => :delete
 
-- else
+/ - else
 
-  p this is default index page.
+/   p this is default index page.
 
-  = link_to 'log as User', new_user_session_path
+/   = link_to 'log as User', new_user_session_path
 
-  br
+/   br
 
-  = link_to 'log as Client', new_client_session_path
+/   = link_to 'log as Client', new_client_session_path
 
-  br
+/   br
 
-  = link_to 'log as Employee', new_employee_session_path
+/   = link_to 'log as Employee', new_employee_session_path
