@@ -11,12 +11,37 @@
         .panel-body
           = render "shared/error_messages"
           = simple_form_for :employee_applicant, url: employee_applicants_path do |f|
+
+            / 验证的错误提示
+            - if @employee_applicant.errors.any?
+              #error_explanation
+                h2 
+                  = pluralize(@employee_applicant.errors.count, "error")
+                  '
+                  | prohibited this employee from being created:
+                  ul 
+                    - @employee_applicant.errors.full_messages.each do |msg|
+                      li = msg
+            
+            / 申请基本信息的提交表单
             .form-inputs
               = f.input :employee_snum, label: '员工号', required: true, autofocus: true
               = f.input :email, label: '邮箱', required: true
               = f.input :name, label: '姓名', required: true
               = f.input :board_on, label: '入职日期', required: true
-
+              
+              / 入职日期的下拉选择菜单［测试中］
+              / .date-dropdown
+              /   input type="text" placeholder="yyyy-mm-dd"
+              /   a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              /     span.caret
+              /     span.sr-only Toggle Dropdown
+              /   ul.dropdown-menu role="menu" aria-labelledby="dLabel"
+              /     <li><a href="#">1970</a></li>
+              /     <li><a href="#">1980</a></li>
+              /     <li><a href="#">1990</a></li>
+            
+            br
             .form-actions
               = f.button :submit, "Submit", class: "btn btn-primary"
               ' 
