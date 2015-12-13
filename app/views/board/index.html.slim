@@ -1,30 +1,36 @@
 .row
-  .col-lg-12.col-sm-12
-    #board-carousel.carousel.slide data-ride="carousel"
-      ol.carousel-indicators
-        li.active data-target="#board-carousel" data-slide-to="0"
-        li data-target="#board-carousel" data-slide-to="1"
+  .container
+    .col-lg-12.col-sm-12
+      #board-carousel.carousel.slide data-ride="carousel"
+        ol.carousel-indicators
+          li.active data-target="#board-carousel" data-slide-to="0"
+          li data-target="#board-carousel" data-slide-to="1"
 
-      .carousel-inner role="listbox"
-        .item.active
-          .item-content-1.clearfix
-        .item
-          .item-content-2.clearfix
+        .carousel-inner role="listbox"
+          .item.active
+            = image_tag "hp.jpg"
+            .carousel-caption
+              h3 你看到水面下的奥秘了吗？
+              p 真实往往掩藏在看不见的地方，找出真相，才能发现业务上的庞然大物。
+          .item
+            = image_tag "bird.jpg"
+            .carousel-caption
+              h3 飞鸟总是按某个模式运作
+              p 站在对的角度才能发现模式神奇，不论是否相信，规律总是在发挥着作用。
 
-      a.left.carousel-control href="#board-carousel" role="button" data-slide="prev"
-        i.fa.fa-chevron-left.fa-4 aria-hidden="true" style="font-size: 3.5em; line-height: 768px;"
-        span.sr-only Previous
+        a.left.carousel-control href="#board-carousel" role="button" data-slide="prev"
+          i.fa.fa-chevron-left.fa-4 aria-hidden="true" style="font-size: 3.5em; line-height: 768px;"
+          span.sr-only Previous
 
-      a.right.carousel-control href="#board-carousel" role="button" data-slide="next"
-        i.fa.fa-chevron-right.fa-4 aria-hidden="true" style="font-size: 3.5em; line-height: 768px;"
-        span.sr-only Next
+        a.right.carousel-control href="#board-carousel" role="button" data-slide="next"
+          i.fa.fa-chevron-right.fa-4 aria-hidden="true" style="font-size: 3.5em; line-height: 768px;"
+          span.sr-only Next
+      hr
 
 = render 'shared/board_top'
 
-hr
-
 .row
-  .container-fluid
+  .container
     .col-sm-12.col-md-6.col-lg-3
       .thumbnail
         = image_tag 'photo_01.jpg'
@@ -54,7 +60,7 @@ hr
         = image_tag 'photo_03.jpg'
 
         .caption
-          h3 想了解更多数据服务？
+          h3 了解更多数据服务？
           p 数据分析是指用适当统计方法对收集来的大量数据进行分析，提取有用信息和形成结论，加以详细研究和概括总结的过程。
           p
             a href="#" class="btn btn-primary" role="button" 了解更多
@@ -67,7 +73,7 @@ hr
 
         .caption
           h3 定制您的需要
-          p 每个企业都有与众不同的视角，对待市场与客户如此，对待数据也是如此，聆听是数据服务的起点……
+          p 每个企业都有与众不同的视角，对待市场与客户如此，对待形形色色的数据也是如此，聆听是数据服务的起点……
           p
             a href="#" class="btn btn-primary" role="button" 了解更多
             ' 
@@ -76,10 +82,11 @@ hr
 footer
   .container-fluid
     .row.board-footer
-      .col-sm-12.col-md-6.col-lg-4
-        p 上海采恪企业管理咨询服务有限公司 @2010 - 2016
-      .col-sm-12.col-md-6.col-lg-8
-        p this is others
+      .container
+        .col-sm-12.col-md-6.col-lg-4
+          p 上海采恪企业管理咨询服务有限公司 @2010 - 2016
+        .col-sm-12.col-md-6.col-lg-8
+          p this is others
 
 
 
