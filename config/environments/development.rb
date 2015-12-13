@@ -16,10 +16,19 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
-  # 配置开发环境下的URL地址。
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # 配置开发环境下的SMPT URL地址。
+  config.action_mailer.default_url_options = { host: 'usingnow.com', port: 80 }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {:address => "localhost", :port => 1025}
+  config.action_mailer.smtp_settings = {
+    address: "smtp.exmail.qq.com",
+    port: 25,
+    domain: "smtp.qq.com",
+    authentication: :plain,
+    enable_starttls_auto: true,
+    user_name: "services@usingnow.com",
+    password: "1qazXSW2",
+    openssl_verify_mode: "none"
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
