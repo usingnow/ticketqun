@@ -1,5 +1,5 @@
 .row
-  .container
+  .container-fluid
     .col-lg-12.col-sm-12
       #board-carousel.carousel.slide data-ride="carousel"
         ol.carousel-indicators
@@ -30,7 +30,7 @@
 = render 'shared/board_top'
 
 .row
-  .container
+  .container-fluid
     .col-sm-12.col-md-6.col-lg-3
       .thumbnail
         = image_tag 'photo_01.jpg'
@@ -82,11 +82,10 @@
 footer
   .container-fluid
     .row.board-footer
-      .container
-        .col-sm-12.col-md-6.col-lg-4
-          p 上海采恪企业管理咨询服务有限公司 @2010 - 2016
-        .col-sm-12.col-md-6.col-lg-8
-          p this is others
+      .col-sm-12.col-md-6.col-lg-4
+        p 上海采恪企业管理咨询服务有限公司 @2010 - 2016
+      .col-sm-12.col-md-6.col-lg-8
+        p this is others
 
 
 
