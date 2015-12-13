@@ -27,7 +27,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :amations do
+    resources :api_migrations do
       collection do
 
       end
