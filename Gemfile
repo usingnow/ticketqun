@@ -42,6 +42,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
+# bcrypt 这个 gem 被 devise 已经附带安装，版本 = 3.1.10
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
@@ -53,8 +54,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  # using 'mailcatcher' for test, after bundle install, run 'mailcatcher' and you can login 'http://localhost:1080' to check Email
-  gem 'mailcatcher'
+
 end
 
 group :development do
