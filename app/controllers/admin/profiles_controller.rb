@@ -1,4 +1,6 @@
 class Admin::ProfilesController < ApplicationController
+  before_filter :authenticate_employee!
+
   layout 'admin'
 
   before_action :set_profile, only: [:show, :edit, :update, :destroy]

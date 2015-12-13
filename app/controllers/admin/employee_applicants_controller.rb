@@ -1,4 +1,6 @@
 class Admin::EmployeeApplicantsController < ApplicationController
+  before_filter :authenticate_employee!
+
   layout 'admin'
 
   def index

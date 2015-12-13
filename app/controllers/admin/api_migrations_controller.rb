@@ -1,4 +1,6 @@
 class Admin::ApiMigrationsController < ApplicationController
+  before_filter :authenticate_employee!
+  
   layout 'admin'
 
   before_action :set_api_migration, only: [:show, :edit, :update, :destroy, :migrate_csv_to]
