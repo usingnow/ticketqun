@@ -30,7 +30,7 @@ class Admin::EmployeeApplicantsController < ApplicationController
 
   private 
     def employee_applicant_params
-      params.require(:employee_applicants).permit(:employee_snum, :name, :email, 
+      params.require(:employee_applicant).permit(:employee_snum, :name, :email, 
                                                   :board_on, :acceptance, :created_at)
     end
 end
