@@ -10,7 +10,7 @@
           '请填写您的申请基本信息：
         .panel-body
           = render "shared/error_messages"
-          = simple_form_for :employee_applicant, url: employee_applicants_path do |f|
+          = simple_form_for :employee_applicant, url: admin_employee_applicants_path do |f|
 
             / 验证的错误提示
             - if @employee_applicant.errors.any?
